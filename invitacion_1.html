@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Javier & Catalina — 19.12.26</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --cream: #f4efe2;
+    --cream-soft: #eee7d6;
+    --ink: #2f2b22;
+    --sage: #8a9678;
+    --sage-deep: #6f7c5e;
+    --sage-pale: #c9d1ba;
+    --gold: #d4a441;
+    --line-w: 2px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation: none !important; transition: none !important; }
+  }
+
+  a{ color: inherit; }
+
+  .reveal{
+    opacity:0;
+    transform: translateY(18px);
+    transition: opacity .8s ease, transform .8s ease;
+  }
+  .reveal.is-visible{ opacity:1; transform: translateY(0); }
+
+  /* ---------- Scallop frame (signature element) ---------- */
+  .scallop-frame{
+    position: relative;
+    margin: 24px auto;
+    max-width: 640px;
+    padding: 56px 34px 44px;
+  }
+  .scallop-frame::before,
+  .scallop-frame::after{
+    content:"";
+    position: absolute;
+    left: 22px; right: 22px;
+    height: 22px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='24' viewBox='0 0 60 24'><path d='M0 12 C 8 -3 22 -3 30 12 C 38 27 52 27 60 12' fill='none' stroke='%238a9678' stroke-width='3'/></svg>");
+    background-size: 60px 22px;
+    background-repeat: repeat-x;
+    background-position: center;
+  }
+  .scallop-frame::before{ top: 0; }
+  .scallop-frame::after{ bottom: 0; }
+  .scallop-frame .side-l,
+  .scallop-frame .side-r{
+    content:"";
+    position: absolute;
+    top: 22px; bottom: 22px;
+    width: 22px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='60' viewBox='0 0 24 60'><path d='M12 0 C -3 8 -3 22 12 30 C 27 38 27 52 12 60' fill='none' stroke='%238a9678' stroke-width='3'/></svg>");
+    background-size: 22px 60px;
+    background-repeat: repeat-y;
+    background-position: center;
+  }
+  .scallop-frame .side-l{ left: 0; }
+  .scallop-frame .side-r{ right: 0; }
+  .scallop-frame .corner{
+    position:absolute; width:30px; height:30px;
+  }
+  .scallop-frame .corner svg{ width:100%; height:100%; }
+  .scallop-frame .corner.tl{ top:-2px; left:-2px; }
+  .scallop-frame .corner.tr{ top:-2px; right:-2px; transform: scaleX(-1); }
+  .scallop-frame .corner.bl{ bottom:-2px; left:-2px; transform: scaleY(-1); }
+  .scallop-frame .corner.br{ bottom:-2px; right:-2px; transform: scale(-1,-1); }
+
+  /* ---------- Hero ---------- */
+  .hero{ text-align:center; }
+  .stars{ margin-bottom: 6px; }
+  .names{
+    font-family: 'Mrs Saint Delafield', cursive;
+    font-size: clamp(2.6rem, 9vw, 4.2rem);
+    color: var(--ink);
+    line-height: 1;
+    margin: 6px 0 18px;
+  }
+  .names .amp{ color: var(--sage-deep); padding: 0 6px; }
+
+  .illustration{ width: min(340px, 78%); margin: 6px auto 20px; display:block; }
+
+  .save-the-date{
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: .35em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+    font-size: clamp(1.15rem, 3.4vw, 1.55rem);
+    margin: 4px 0 6px;
+    padding-left: .35em; /* optical centering for letter-spacing */
+  }
+  .date-big{
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    color: var(--sage-deep);
+    font-size: clamp(2.6rem, 9vw, 3.6rem);
+    letter-spacing: .04em;
+    margin: 2px 0 4px;
+  }
+  .place-script{
+    font-family: 'Mrs Saint Delafield', cursive;
+    color: var(--sage);
+    font-size: clamp(1.4rem, 4.5vw, 1.9rem);
+  }
+
+  .scroll-cue{
+    display:block; margin: 30px auto 4px;
+    font-size: .72rem; letter-spacing:.28em; text-transform:uppercase;
+    color: var(--sage-deep); opacity:.75;
+  }
+  .scroll-cue::after{
+    content:""; display:block; width:1px; height:26px; margin: 8px auto 0;
+    background: var(--sage-deep); opacity:.6;
+    animation: drip 1.8s ease-in-out infinite;
+  }
+  @keyframes drip{ 0%,100%{ transform: scaleY(1); opacity:.6;} 50%{ transform: scaleY(.4); opacity: .2;} }
+
+  /* ---------- Sections ---------- */
+  section{ max-width: 640px; margin: 0 auto; padding: 52px 26px; }
+  .divider{
+    width: 60px; height: 1px; background: var(--sage-pale); margin: 0 auto 34px;
+  }
+  h2.section-title{
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase;
+    letter-spacing: .3em;
+    text-align:center;
+    color: var(--sage-deep);
+    font-size: 1.05rem;
+    margin: 0 0 6px;
+  }
+  .section-sub{
+    text-align:center; font-family:'Mrs Saint Delafield', cursive;
+    color: var(--sage); font-size: 1.6rem; margin: 0 0 30px;
+  }
+
+  /* countdown */
+  .countdown{
+    display:flex; justify-content:center; gap: clamp(10px,4vw,26px); flex-wrap: wrap;
+  }
+  .countdown .unit{ text-align:center; min-width: 68px; }
+  .countdown .num{
+    font-family:'Cormorant Garamond', serif; font-weight:600;
+    font-size: clamp(2.1rem, 7vw, 2.8rem); color: var(--ink);
+    background: var(--cream-soft);
+    border: 1px solid var(--sage-pale);
+    border-radius: 4px;
+    padding: 14px 4px 8px;
+    display:block;
+  }
+  .countdown .lbl{
+    display:block; margin-top:8px; font-size:.68rem; letter-spacing:.18em;
+    text-transform:uppercase; color: var(--sage-deep);
+  }
+
+  /* details */
+  .detail-row{
+    display:flex; gap: 18px; align-items:flex-start;
+    padding: 16px 0; border-bottom: 1px solid var(--sage-pale);
+  }
+  .detail-row:last-of-type{ border-bottom:none; }
+  .detail-icon{ width:26px; height:26px; flex:none; margin-top:3px; color: var(--sage-deep); }
+  .detail-icon svg{ width:100%; height:100%; }
+  .detail-title{ font-family:'Cormorant Garamond', serif; font-weight:600; font-size:1.15rem; margin:0 0 2px; }
+  .detail-text{ margin:0; font-size:.95rem; line-height:1.5; color:#4a4636; }
+
+  .map-wrap{ margin-top: 22px; border-radius: 6px; overflow:hidden; border:1px solid var(--sage-pale); }
+  .map-wrap iframe{ width:100%; height: 280px; border:0; display:block; }
+  .btn-row{ text-align:center; margin-top: 18px; }
+
+  .btn{
+    display:inline-block; font-family:'Jost',sans-serif; font-size:.85rem; letter-spacing:.14em;
+    text-transform: uppercase; text-decoration:none; color: var(--cream);
+    background: var(--sage-deep); padding: 13px 28px; border-radius: 3px;
+    border: 1px solid var(--sage-deep); cursor:pointer;
+    transition: background .25s ease, color .25s ease;
+  }
+  .btn:hover{ background: transparent; color: var(--sage-deep); }
+  .btn.outline{ background: transparent; color: var(--sage-deep); }
+  .btn.outline:hover{ background: var(--sage-deep); color: var(--cream); }
+
+  /* gifts */
+  .gift-options{ display:grid; gap:20px; grid-template-columns: 1fr; }
+  @media (min-width: 560px){ .gift-options{ grid-template-columns: 1fr 1fr; } }
+  .gift-card{
+    background: var(--cream-soft); border:1px solid var(--sage-pale); border-radius:6px;
+    padding: 26px 22px; text-align:center;
+  }
+  .gift-card h3{ font-family:'Cormorant Garamond', serif; font-size:1.25rem; margin:0 0 8px; font-weight:600; }
+  .gift-card p{ font-size:.88rem; color:#4a4636; margin:0 0 16px; line-height:1.5; }
+
+  .bank-details{
+    text-align:left; font-size:.9rem; margin: 14px 0 18px; color:#3a362b;
+    background: var(--cream); border:1px dashed var(--sage-pale); border-radius:4px; padding: 14px 16px;
+  }
+  .bank-details div{ display:flex; justify-content:space-between; gap:10px; padding:4px 0; }
+  .bank-details span.k{ color:#7a7460; }
+  .copy-btn{
+    background:none; border:1px solid var(--sage-pale); color: var(--sage-deep);
+    font-family:'Jost',sans-serif; font-size:.7rem; letter-spacing:.08em; text-transform:uppercase;
+    padding: 3px 9px; border-radius:3px; cursor:pointer; margin-top: 6px;
+  }
+  .copy-btn:hover{ background: var(--sage-pale); }
+
+  /* rsvp */
+  form.rsvp{ display:flex; flex-direction:column; gap:16px; }
+  .field label{
+    display:block; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;
+    color: var(--sage-deep); margin-bottom:6px;
+  }
+  .field input[type=text],
+  .field input[type=email],
+  .field select,
+  .field textarea{
+    width:100%; font-family:'Jost',sans-serif; font-size:.95rem; color: var(--ink);
+    background: var(--cream-soft); border:1px solid var(--sage-pale); border-radius:4px;
+    padding: 11px 12px; outline:none; transition: border-color .2s ease;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{ border-color: var(--sage-deep); }
+  .field textarea{ resize: vertical; min-height: 80px; font-family:'Jost',sans-serif; }
+  .field-row{ display:flex; gap:14px; flex-wrap:wrap; }
+  .field-row > .field{ flex:1 1 200px; }
+  .rsvp-submit{ margin-top:6px; align-self:center; }
+  .rsvp-note{
+    text-align:center; font-size:.8rem; color:#7a7460; margin-top:-4px;
+  }
+  #rsvp-msg{ text-align:center; font-size:.9rem; margin-top:10px; min-height:1.2em; }
+  #rsvp-msg.ok{ color: var(--sage-deep); }
+  #rsvp-msg.err{ color:#a15353; }
+
+  footer{
+    text-align:center; padding: 40px 24px 60px; color: var(--sage-deep);
+  }
+  footer .fname{ font-family:'Mrs Saint Delafield', cursive; font-size:1.7rem; display:block; margin-bottom:4px; }
+  footer small{ font-size:.7rem; letter-spacing:.1em; color:#8a8570; }
+
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<div class="scallop-frame hero reveal">
+  <span class="side-l"></span><span class="side-r"></span>
+  <span class="corner tl"><svg viewBox="0 0 30 30"><path d="M2 22 C 2 8 8 2 22 2" fill="none" stroke="#8a9678" stroke-width="3"/></svg></span>
+  <span class="corner tr"><svg viewBox="0 0 30 30"><path d="M2 22 C 2 8 8 2 22 2" fill="none" stroke="#8a9678" stroke-width="3"/></svg></span>
+  <span class="corner bl"><svg viewBox="0 0 30 30"><path d="M2 22 C 2 8 8 2 22 2" fill="none" stroke="#8a9678" stroke-width="3"/></svg></span>
+  <span class="corner br"><svg viewBox="0 0 30 30"><path d="M2 22 C 2 8 8 2 22 2" fill="none" stroke="#8a9678" stroke-width="3"/></svg></span>
+
+  <svg class="stars" width="70" height="34" viewBox="0 0 70 34" fill="none">
+    <g fill="#d4a441">
+      <path d="M20 2 L22 9 L29 11 L22 13 L20 20 L18 13 L11 11 L18 9 Z"/>
+      <path d="M46 8 L47.4 12.6 L52 14 L47.4 15.4 L46 20 L44.6 15.4 L40 14 L44.6 12.6 Z"/>
+      <path d="M32 18 L32.9 21 L36 22 L32.9 23 L32 26 L31.1 23 L28 22 L31.1 21 Z"/>
+    </g>
+  </svg>
+
+  <h1 class="names">Javier<span class="amp">&amp;</span>Catalina</h1>
+
+  <svg class="illustration" viewBox="0 0 340 190" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 168 C 60 170 90 176 150 174 C 210 172 250 178 322 166" stroke="#2f2b22" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+    <path d="M40 165 C 55 95 95 60 168 58 C 241 60 281 95 296 165 C 250 172 215 150 168 150 C 121 150 86 172 40 165 Z" stroke="#2f2b22" stroke-width="1.6" fill="none" stroke-linejoin="round"/>
+    <path d="M120 150 C 116 118 122 96 140 84 C 148 90 150 100 150 112 L150 150" fill="#2f2b22"/>
+    <path d="M150 150 C 150 118 138 96 120 90 C 100 100 92 122 96 150 Z" stroke="#2f2b22" stroke-width="1.4" fill="none"/>
+    <circle cx="150" cy="118" r="0" fill="none"/>
+    <path d="M150 112 C 152 100 160 92 172 88 C 190 96 198 116 194 150" stroke="#2f2b22" stroke-width="1.4" fill="none"/>
+    <path d="M172 88 C 178 82 190 80 198 84 C 206 90 206 100 198 110 L172 110 Z" fill="#2f2b22"/>
+    <path d="M168 62 C 166 76 166 88 168 96" stroke="#2f2b22" stroke-width="1.3" fill="none"/>
+    <path d="M160 84 C 164 78 172 78 176 84" stroke="#2f2b22" stroke-width="1.3" fill="none"/>
+    <path d="M118 148 C 122 140 132 136 140 140 C 146 143 148 150 146 156" stroke="#2f2b22" stroke-width="1.3" fill="none"/>
+    <path d="M198 108 C 202 128 200 142 194 150" stroke="#2f2b22" stroke-width="1.3" fill="none"/>
+  </svg>
+
+  <p class="save-the-date">Save the date</p>
+  <p class="date-big">19.12.26</p>
+  <p class="place-script">Paine, Santiago</p>
+</div>
+
+<span class="scroll-cue reveal">Descubre más</span>
+
+<!-- ============ COUNTDOWN ============ -->
+<section id="countdown-section">
+  <h2 class="section-title reveal">Falta poco</h2>
+  <p class="section-sub reveal">para celebrar juntos</p>
+  <div class="countdown reveal">
+    <div class="unit"><span class="num" id="cd-days">00</span><span class="lbl">Días</span></div>
+    <div class="unit"><span class="num" id="cd-hours">00</span><span class="lbl">Horas</span></div>
+    <div class="unit"><span class="num" id="cd-mins">00</span><span class="lbl">Min</span></div>
+    <div class="unit"><span class="num" id="cd-secs">00</span><span class="lbl">Seg</span></div>
+  </div>
+</section>
+
+<!-- ============ DETALLES ============ -->
+<section id="detalles">
+  <div class="divider reveal"></div>
+  <h2 class="section-title reveal">Detalles</h2>
+  <p class="section-sub reveal">del gran día</p>
+
+  <div class="reveal">
+    <div class="detail-row">
+      <span class="detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg></span>
+      <div>
+        <p class="detail-title">Sábado 19 de diciembre, 2026</p>
+        <p class="detail-text">Ceremonia y celebración a partir de las 18:30 hrs.</p>
+      </div>
+    </div>
+    <div class="detail-row">
+      <span class="detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg></span>
+      <div>
+        <p class="detail-title">Casa Granada, Paine</p>
+        <p class="detail-text">La ceremonia y la fiesta se realizarán en el mismo lugar.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-wrap reveal">
+    <iframe
+      src="https://www.google.com/maps?q=Casa+Granada+Paine+Chile&z=15&output=embed"
+      loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen>
+    </iframe>
+  </div>
+  <div class="btn-row reveal">
+    <a class="btn outline" href="https://maps.app.goo.gl/sQavnorfaM9fpg399" target="_blank" rel="noopener">Cómo llegar</a>
+  </div>
+</section>
+
+<!-- ============ REGALOS ============ -->
+<section id="regalos">
+  <div class="divider reveal"></div>
+  <h2 class="section-title reveal">Regalos</h2>
+  <p class="section-sub reveal">tu presencia es lo más importante</p>
+
+  <div class="gift-options reveal">
+    <div class="gift-card">
+      <h3>Lista de novios</h3>
+      <p>Si quieres regalarnos algo, dejamos preparada una lista con cariño.</p>
+      <a class="btn" href="https://club.noviosparis.cl/home/couple-catalog/21049336" target="_blank" rel="noopener">Ver lista de regalos</a>
+    </div>
+    <div class="gift-card">
+      <h3>Transferencia</h3>
+      <p>También puedes hacernos llegar tu regalo directamente.</p>
+      <div class="bank-details" id="bank-details">
+        <div><span class="k">Nombre</span><span>Catalina Molina</span></div>
+        <div><span class="k">Rut</span><span>19.686.964-6</span></div>
+        <div><span class="k">Banco</span><span>Mercado Pago (Cta. Vista)</span></div>
+        <div><span class="k">N° cuenta</span><span>00-100-63461-81</span></div>
+        <div><span class="k">Correo</span><span>cata.molina97@gmail.com</span></div>
+      </div>
+      <button class="copy-btn" id="copy-bank-btn" type="button">Copiar datos</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RSVP ============ -->
+<section id="rsvp">
+  <div class="divider reveal"></div>
+  <h2 class="section-title reveal">Confirma tu asistencia</h2>
+  <p class="section-sub reveal">te esperamos con muchas ganas</p>
+
+  <form class="rsvp reveal" id="rsvp-form">
+    <div class="field">
+      <label for="f-name">Nombre y apellido</label>
+      <input type="text" id="f-name" name="nombre" required>
+    </div>
+
+    <div class="field-row">
+      <div class="field">
+        <label for="f-diet">Restricción alimentaria</label>
+        <select id="f-diet" name="restriccion">
+          <option value="Ninguna">Ninguna</option>
+          <option value="Vegetariano">Vegetariano</option>
+          <option value="Vegano">Vegano</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-allergy">Alergias</label>
+        <input type="text" id="f-allergy" name="alergias" placeholder="Si no tienes, escribe 'ninguna'">
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="f-message">Un mensajito para los novios</label>
+      <textarea id="f-message" name="mensaje" placeholder="Escribe aquí tus buenos deseos..."></textarea>
+    </div>
+
+    <div class="field">
+      <label for="f-song">Una canción que no puede faltar</label>
+      <input type="text" id="f-song" name="cancion" placeholder="Nombre de la canción y artista">
+    </div>
+
+    <div class="rsvp-submit">
+      <button class="btn" type="submit">Enviar confirmación</button>
+    </div>
+    <p class="rsvp-note">Por favor confirma antes del 1 de diciembre.</p>
+    <p id="rsvp-msg"></p>
+  </form>
+</section>
+
+<footer>
+  <span class="fname">Javier &amp; Catalina</span>
+  <small>19 · 12 · 2026 — Paine, Santiago</small>
+</footer>
+
+<script>
+  // ---- reveal on scroll ----
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+
+  // ---- countdown ----
+  const weddingDate = new Date('2026-12-19T18:30:00-03:00'); // hora de Chile
+  function updateCountdown(){
+    const now = new Date();
+    let diff = weddingDate - now;
+    if (diff < 0) diff = 0;
+    const d = Math.floor(diff / (1000*60*60*24));
+    const h = Math.floor((diff / (1000*60*60)) % 24);
+    const m = Math.floor((diff / (1000*60)) % 60);
+    const s = Math.floor((diff / 1000) % 60);
+    document.getElementById('cd-days').textContent = String(d).padStart(2,'0');
+    document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+    document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
+    document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // ---- copy bank details ----
+  document.getElementById('copy-bank-btn').addEventListener('click', () => {
+    const text = [
+      'Nombre: Catalina Molina',
+      'Rut: 19.686.964-6',
+      'Banco: Mercado Pago - Cuenta Vista',
+      'N° de cuenta: 00-100-63461-81',
+      'Correo: cata.molina97@gmail.com'
+    ].join('\n');
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.getElementById('copy-bank-btn');
+      const original = btn.textContent;
+      btn.textContent = '¡Copiado!';
+      setTimeout(() => { btn.textContent = original; }, 1800);
+    });
+  });
+
+  // ---- RSVP submit -> Google Apps Script Web App ----
+  // Reemplaza el valor de abajo por la URL de tu Web App de Apps Script
+  // (ver instrucciones que te dio Claude para configurarlo).
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwlU4xh2l7sIDJDsfg0gt_eLTCmlyHSvSxTg2jAlUo6DstByS2O0HGzSBEgNcRMC7I52g/exec';
+
+  const form = document.getElementById('rsvp-form');
+  const msg = document.getElementById('rsvp-msg');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (GOOGLE_SCRIPT_URL === 'PEGA_AQUI_TU_URL_DE_APPS_SCRIPT') {
+      msg.className = 'err';
+      msg.textContent = 'Falta configurar la conexión con Google Sheets (ver instrucciones).';
+      return;
+    }
+    const btn = form.querySelector('button[type=submit]');
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+
+    const data = new FormData(form);
+
+    fetch(GOOGLE_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: data
+    }).then(() => {
+      msg.className = 'ok';
+      msg.textContent = '¡Gracias! Tu confirmación fue recibida.';
+      form.reset();
+    }).catch(() => {
+      msg.className = 'err';
+      msg.textContent = 'Hubo un problema al enviar. Inténtalo de nuevo.';
+    }).finally(() => {
+      btn.disabled = false;
+      btn.textContent = 'Enviar confirmación';
+    });
+  });
+</script>
+
+</body>
+</html>

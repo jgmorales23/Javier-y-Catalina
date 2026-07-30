@@ -48,9 +48,10 @@
   /* ---------- Scallop frame (signature element) ---------- */
   .scallop-frame{
     position: relative;
-    margin: 24px auto;
-    max-width: 640px;
-    padding: 56px 34px 44px;
+    width: calc(100% - 24px);
+    margin: 20px auto 30px;
+    max-width: 760px;
+    padding: 46px 30px 36px;
   }
   .scallop-frame::before,
   .scallop-frame::after{
@@ -108,7 +109,7 @@
     text-transform: uppercase;
     color: var(--sage-deep);
     font-size: clamp(1.1rem, 3.2vw, 1.4rem);
-    margin: 0 0 6px;
+    margin: 40px 0 6px;
     padding-left: .35em;
   }
 
@@ -322,14 +323,15 @@
 </head>
 <body>
 
-<!-- ============ HERO ============ -->
-<div class="scallop-frame hero reveal">
+<div class="scallop-frame">
   <span class="side-l"></span><span class="side-r"></span>
   <span class="corner tl"><svg viewBox="0 0 30 30"><path d="M2 22 C 2 8 8 2 22 2" fill="none" stroke="#8a9678" stroke-width="3"/></svg></span>
   <span class="corner tr"><svg viewBox="0 0 30 30"><path d="M2 22 C 2 8 8 2 22 2" fill="none" stroke="#8a9678" stroke-width="3"/></svg></span>
   <span class="corner bl"><svg viewBox="0 0 30 30"><path d="M2 22 C 2 8 8 2 22 2" fill="none" stroke="#8a9678" stroke-width="3"/></svg></span>
   <span class="corner br"><svg viewBox="0 0 30 30"><path d="M2 22 C 2 8 8 2 22 2" fill="none" stroke="#8a9678" stroke-width="3"/></svg></span>
 
+<!-- ============ HERO ============ -->
+<div class="hero reveal">
   <svg class="stars" width="70" height="34" viewBox="0 0 70 34" fill="none">
     <g fill="#d4a441">
       <path d="M20 2 L22 9 L29 11 L22 13 L20 20 L18 13 L11 11 L18 9 Z"/>
@@ -338,39 +340,8 @@
     </g>
   </svg>
 
-  <svg class="illustration banner" viewBox="0 0 640 210" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <!-- boa / hill silhouette -->
-    <path d="M40 176 C 70 92 140 40 245 38 C 350 36 420 40 470 78 C 500 100 512 132 508 176
-             C 460 184 400 158 330 158 C 270 158 235 176 175 176 C 130 176 90 182 40 176 Z"
-      stroke="#2f2b22" stroke-width="1.6" fill="none" stroke-linejoin="round"/>
-
-    <!-- her silhouette + hair -->
-    <path d="M175 176 C 168 130 176 96 205 78 C 213 84 216 96 216 112 L216 176 Z" fill="#2f2b22"/>
-    <path d="M216 176 C 216 130 200 96 172 84 C 145 96 134 128 140 176"
-      stroke="#2f2b22" stroke-width="1.4" fill="none"/>
-    <path d="M216 108 C 220 92 232 82 248 78" stroke="#2f2b22" stroke-width="1.3" fill="none"/>
-
-    <!-- flower stems between them -->
-    <path d="M262 176 C 260 150 262 122 266 96" stroke="#2f2b22" stroke-width="1.3" fill="none"/>
-    <path d="M266 100 C 260 92 250 90 242 94 C 246 104 256 108 266 100 Z" fill="none" stroke="#2f2b22" stroke-width="1.2"/>
-    <path d="M266 120 C 278 114 288 116 294 124 C 286 132 274 130 266 120 Z" fill="none" stroke="#2f2b22" stroke-width="1.2"/>
-
-    <!-- him silhouette + hair -->
-    <path d="M330 158 C 328 118 336 90 356 78 C 378 88 388 112 384 158" fill="#2f2b22"/>
-    <path d="M384 158 C 388 112 378 88 356 78 C 356 78 356 78 356 78" stroke="#2f2b22" stroke-width="0" fill="#2f2b22"/>
-    <path d="M330 158 C 328 118 338 92 360 80 C 372 86 380 98 382 112 L 382 158 Z" fill="#2f2b22"/>
-    <path d="M382 112 C 388 100 400 92 414 90 C 424 98 424 110 414 118 L 382 118 Z" fill="#2f2b22"/>
-    <path d="M356 80 C 350 92 350 104 356 112" stroke="#2f2b22" stroke-width="1.2" fill="none"/>
-
-    <!-- her arms reaching to flower -->
-    <path d="M216 158 C 222 146 234 140 246 144 C 254 148 258 156 254 164" stroke="#2f2b22" stroke-width="1.3" fill="none"/>
-    <!-- his arm reaching to flower -->
-    <path d="M382 118 C 390 140 388 154 380 158" stroke="#2f2b22" stroke-width="1.3" fill="none"/>
-    <path d="M330 158 C 336 148 348 144 358 148" stroke="#2f2b22" stroke-width="1.3" fill="none"/>
-  </svg>
-
   <p class="eyebrow">Nos casamos.</p>
-  <h1 class="names">Javier y Catalina</h1>
+  <h1 class="names">Javier<span class="amp">&amp;</span>Catalina</h1>
   <p class="date-big">19.12.26</p>
 </div>
 
@@ -548,7 +519,7 @@
 <!-- ============ NUESTRA CANCIÓN ============ -->
 <section id="cancion">
   <div class="divider reveal"></div>
-  <h2 class="section-title reveal">Nuestra canción</h2>
+  <h2 class="section-title reveal">Empieza a practicar los pasos</h2>
   <p class="section-sub reveal">la que no puede faltar en la pista</p>
 
   <div class="song-wrap reveal" id="song-wrap">
@@ -611,6 +582,8 @@
   <span class="fname">Javier &amp; Catalina</span>
   <small>19 · 12 · 2026 — Paine, Santiago</small>
 </footer>
+
+</div>
 
 <script>
   // ---- reveal on scroll ----

@@ -6,7 +6,7 @@
 <title>Javier & Catalina — 19.12.26</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 
   :root{
@@ -53,6 +53,19 @@
     max-width: 760px;
     padding: 46px 30px 36px;
   }
+  @media (min-width: 720px){
+    .scallop-frame{
+      width: calc(100% - 60px);
+      max-width: 1040px;
+      padding: 60px 56px 46px;
+    }
+  }
+  @media (min-width: 1100px){
+    .scallop-frame{
+      max-width: 1200px;
+      padding: 68px 70px 54px;
+    }
+  }
   .scallop-frame::before,
   .scallop-frame::after{
     content:"";
@@ -92,7 +105,7 @@
   .hero{ text-align:center; }
   .stars{ margin-bottom: 6px; }
   .names{
-    font-family: 'Mrs Saint Delafield', cursive;
+    font-family: 'Parisienne', cursive;
     font-size: clamp(2.6rem, 9vw, 4.2rem);
     color: var(--ink);
     line-height: 1;
@@ -109,7 +122,7 @@
     text-transform: uppercase;
     color: var(--sage-deep);
     font-size: clamp(1.1rem, 3.2vw, 1.4rem);
-    margin: 40px 0 6px;
+    margin: 40px 0 22px;
     padding-left: .35em;
   }
 
@@ -131,7 +144,7 @@
     margin: 2px 0 4px;
   }
   .place-script{
-    font-family: 'Mrs Saint Delafield', cursive;
+    font-family: 'Parisienne', cursive;
     color: var(--sage);
     font-size: clamp(1.4rem, 4.5vw, 1.9rem);
   }
@@ -163,7 +176,7 @@
     margin: 0 0 6px;
   }
   .section-sub{
-    text-align:center; font-family:'Mrs Saint Delafield', cursive;
+    text-align:center; font-family:'Parisienne', cursive;
     color: var(--sage); font-size: 1.6rem; margin: 0 0 30px;
   }
 
@@ -225,7 +238,7 @@
   /* mensaje de los novios */
   .love-msg{ text-align:center; font-size:1rem; line-height:1.9; color:#4a4636; max-width:500px; margin:0 auto; }
   .love-msg .sign{
-    display:block; font-family:'Mrs Saint Delafield', cursive; font-size:1.8rem;
+    display:block; font-family:'Parisienne', cursive; font-size:1.8rem;
     color: var(--sage-deep); font-weight:400; margin-top:24px;
   }
 
@@ -306,6 +319,11 @@
   .field-row{ display:flex; gap:14px; flex-wrap:wrap; }
   .field-row > .field{ flex:1 1 200px; }
   .rsvp-submit{ margin-top:6px; align-self:center; }
+  .conditional-fields{ display:flex; flex-direction:column; gap:16px; }
+  .conditional-fields.hidden{ display:none; }
+  .menu-intro{ font-size:.88rem; line-height:1.65; color:#4a4636; background: var(--cream-soft); border:1px solid var(--sage-pale); border-radius:6px; padding:14px 16px; margin:0; }
+  .playlist-note{ text-align:center; font-size:.85rem; color:#6f6a56; margin: -4px 0 4px; }
+  .playlist-note a{ color: var(--sage-deep); text-decoration:underline; }
   .rsvp-note{
     text-align:center; font-size:.8rem; color:#7a7460; margin-top:-4px;
   }
@@ -316,7 +334,7 @@
   footer{
     text-align:center; padding: 40px 24px 60px; color: var(--sage-deep);
   }
-  footer .fname{ font-family:'Mrs Saint Delafield', cursive; font-size:1.7rem; display:block; margin-bottom:4px; }
+  footer .fname{ font-family:'Parisienne', cursive; font-size:1.7rem; display:block; margin-bottom:4px; }
   footer small{ font-size:.7rem; letter-spacing:.1em; color:#8a8570; }
 
 </style>
@@ -366,6 +384,26 @@
     <div class="unit"><span class="num" id="cd-mins">00</span><span class="lbl">Min</span></div>
     <div class="unit"><span class="num" id="cd-secs">00</span><span class="lbl">Seg</span></div>
   </div>
+</section>
+
+<!-- ============ EMPIEZA A PRACTICAR ============ -->
+<section id="cancion">
+  <div class="divider reveal"></div>
+  <h2 class="section-title reveal">Empieza a practicar los pasos</h2>
+  <p class="section-sub reveal">la que no puede faltar en la pista</p>
+
+  <div class="song-wrap reveal">
+    <iframe
+      style="border-radius:12px"
+      src="https://open.spotify.com/embed/track/2lTm559tuIvatlT1u0JYG2?utm_source=generator"
+      width="100%" height="152" frameborder="0"
+      allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy">
+    </iframe>
+  </div>
+  <p class="song-fallback reveal">
+    ¿No carga? <a href="https://www.youtube.com/watch?v=a1Femq4NPxs&t=64s" target="_blank" rel="noopener">Escúchala en YouTube</a>
+  </p>
 </section>
 
 <!-- ============ ITINERARIO ============ -->
@@ -483,7 +521,7 @@
       <span class="rec-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21c-4-4-8-7.5-8-12a8 8 0 0 1 16 0c0 4.5-4 8-8 12Z"/><path d="M9 9l6 6M15 9l-6 6"/></svg></span>
       <div>
         <p class="rec-title">Una celebración solo de grandes</p>
-        <p class="rec-text">Queremos que lo disfrutes al máximo, por eso será una boda sin niños. ¡Gracias por tu comprensión!</p>
+        <p class="rec-text">Queremos que seas tú el adulto irresponsable, por eso la boda será sin niños. Gracias por la comprensión.</p>
       </div>
     </li>
   </ul>
@@ -516,23 +554,6 @@
   </div>
 </section>
 
-<!-- ============ NUESTRA CANCIÓN ============ -->
-<section id="cancion">
-  <div class="divider reveal"></div>
-  <h2 class="section-title reveal">Empieza a practicar los pasos</h2>
-  <p class="section-sub reveal">la que no puede faltar en la pista</p>
-
-  <div class="song-wrap reveal" id="song-wrap">
-    <button type="button" id="song-play-btn" class="song-play-btn">
-      <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-      Reproducir "Baile Inolvidable"
-    </button>
-  </div>
-  <p class="song-fallback reveal">
-    ¿No carga? <a href="https://www.youtube.com/watch?v=a1Femq4NPxs&t=64s" target="_blank" rel="noopener">Escúchala en YouTube</a>
-  </p>
-</section>
-
 <!-- ============ RSVP ============ -->
 <section id="rsvp">
   <div class="divider reveal"></div>
@@ -541,39 +562,68 @@
 
   <form class="rsvp reveal" id="rsvp-form">
     <div class="field">
+      <label for="f-attend">¿Podrás acompañarnos?</label>
+      <select id="f-attend" name="asistencia" required>
+        <option value="" disabled selected>Elige una opción</option>
+        <option value="Sí">❤️ Sí, feliz estaré ahí.</option>
+        <option value="No">😢 Lamentablemente no podré asistir.</option>
+      </select>
+    </div>
+
+    <div class="field">
       <label for="f-name">Nombre y apellido</label>
       <input type="text" id="f-name" name="nombre" required>
     </div>
 
-    <div class="field-row">
+    <div id="attend-yes-fields" class="conditional-fields hidden">
+      <p class="menu-intro">
+        La comida también habla de nosotros. Creemos en una alimentación basada en plantas
+        y queremos compartir esa experiencia con ustedes: hemos preparado un menú vegano
+        pensado para sorprender incluso a quienes nunca lo han probado.
+        De todas formas, queremos que todos disfruten la celebración, así que puedes elegir
+        la opción que prefieras.
+      </p>
+
       <div class="field">
-        <label for="f-diet">Restricción alimentaria</label>
-        <select id="f-diet" name="restriccion">
-          <option value="Ninguna">Ninguna</option>
-          <option value="Vegetariano">Vegetariano</option>
-          <option value="Vegano">Vegano</option>
+        <label for="f-menu">¿Qué menú prefieres?</label>
+        <select id="f-menu" name="menu">
+          <option value="Vegano">🌱 Menú vegano</option>
+          <option value="Omnívoro">🍽️ Menú omnívoro</option>
         </select>
       </div>
+
       <div class="field">
-        <label for="f-allergy">Alergias</label>
-        <input type="text" id="f-allergy" name="alergias" placeholder="Si no tienes, escribe 'ninguna'">
+        <label for="f-allergy">¿Tienes alguna alergia o intolerancia alimentaria?</label>
+        <input type="text" id="f-allergy" name="alergias" placeholder="Ej.: frutos secos, gluten, mariscos, ninguna.">
       </div>
+
+      <div class="field">
+        <label for="f-message">Un mensajito para los novios</label>
+        <textarea id="f-message" name="mensaje" placeholder="Escribe aquí tus buenos deseos..."></textarea>
+      </div>
+
+      <div class="field">
+        <label for="f-song">Una canción que no puede faltar</label>
+        <input type="text" id="f-song" name="cancion" placeholder="Nombre de la canción y artista">
+      </div>
+
+      <p class="playlist-note">
+        Mientras esperas, súmate a la playlist que han ido armando los invitados:
+        <a href="https://open.spotify.com/playlist/4Wf3EUFmUGB0NWVwfzomkd?si=3369b945bdf444fd" target="_blank" rel="noopener">Escuchar playlist</a>
+      </p>
     </div>
 
-    <div class="field">
-      <label for="f-message">Un mensajito para los novios</label>
-      <textarea id="f-message" name="mensaje" placeholder="Escribe aquí tus buenos deseos..."></textarea>
-    </div>
-
-    <div class="field">
-      <label for="f-song">Una canción que no puede faltar</label>
-      <input type="text" id="f-song" name="cancion" placeholder="Nombre de la canción y artista">
+    <div id="attend-no-fields" class="conditional-fields hidden">
+      <div class="field">
+        <label for="f-message-no">Un mensajito para nosotros (opcional)</label>
+        <textarea id="f-message-no" name="mensaje_no" placeholder="Escribe aquí si quieres dejarnos unas palabras..."></textarea>
+      </div>
     </div>
 
     <div class="rsvp-submit">
       <button class="btn" type="submit">Enviar confirmación</button>
     </div>
-    <p class="rsvp-note">Por favor confirma antes del 1 de diciembre.</p>
+    <p class="rsvp-note">Por favor confirma antes del 15 de noviembre.</p>
     <p id="rsvp-msg"></p>
   </form>
 </section>
@@ -628,13 +678,6 @@
     });
   });
 
-  // ---- reproducir canción desde 1:04 ----
-  document.getElementById('song-play-btn').addEventListener('click', function(){
-    const wrap = document.getElementById('song-wrap');
-    wrap.innerHTML = '<iframe src="https://www.youtube.com/embed/a1Femq4NPxs?start=64&autoplay=1" ' +
-      'title="Baile Inolvidable - Bad Bunny" allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe>';
-  });
-
   // ---- RSVP submit -> Google Apps Script Web App ----
   // Reemplaza el valor de abajo por la URL de tu Web App de Apps Script
   // (ver instrucciones que te dio Claude para configurarlo).
@@ -642,6 +685,22 @@
 
   const form = document.getElementById('rsvp-form');
   const msg = document.getElementById('rsvp-msg');
+  const attendSelect = document.getElementById('f-attend');
+  const yesFields = document.getElementById('attend-yes-fields');
+  const noFields = document.getElementById('attend-no-fields');
+
+  attendSelect.addEventListener('change', function(){
+    if (this.value === 'Sí') {
+      yesFields.classList.remove('hidden');
+      noFields.classList.add('hidden');
+    } else if (this.value === 'No') {
+      noFields.classList.remove('hidden');
+      yesFields.classList.add('hidden');
+    } else {
+      yesFields.classList.add('hidden');
+      noFields.classList.add('hidden');
+    }
+  });
 
   form.addEventListener('submit', function(e){
     e.preventDefault();
@@ -655,6 +714,7 @@
     btn.textContent = 'Enviando...';
 
     const data = new FormData(form);
+    const asistira = data.get('asistencia') === 'Sí';
 
     fetch(GOOGLE_SCRIPT_URL, {
       method: 'POST',
@@ -662,7 +722,9 @@
       body: data
     }).then(() => {
       msg.className = 'ok';
-      msg.textContent = '¡Gracias! Tu confirmación fue recibida.';
+      msg.textContent = asistira
+        ? '❤️ ¡Muchas gracias! Estamos muy felices de que seas parte de este día. Nos vemos el 19 de diciembre.'
+        : '❤️ Gracias por avisarnos. Te vamos a echar de menos, pero esperamos verte muy pronto.';
       form.reset();
     }).catch(() => {
       msg.className = 'err';
